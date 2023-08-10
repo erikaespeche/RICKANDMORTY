@@ -1,0 +1,427 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Get Schwifty; */
+}
+
+@font-face {
+    font-family: "Get Schwifty" ;
+    src: url(./get_schwifty.ttf);
+}
+
+body{
+    /* background-image: url("https://p4.wallpaperbetter.com/wallpaper/666/73/120/tv-show-rick-and-morty-artistic-cartoon-wallpaper-preview.jpg"); */
+    background-image: url("https://i.pinimg.com/originals/4e/a7/fb/4ea7fb833c63a4ea0b0fb696c5919dd7.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+/* BARRA DE MENU */
+header{
+    width: 100%;
+    /* height: 73px; */
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #1f201fcf;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+     "a b "
+     "c c";
+    place-items: center;
+    z-index: 1;
+}
+
+
+/* TITULO PRINCIPAL */
+.titulo-principal{
+    background-image: url(./iconos-redessociales/Rick-And-Morty-Logo-Transparent-File.png);
+    width: 210px;
+    height: 65px;
+    background-size: 208px;
+    background-repeat: no-repeat;
+    background-position: center;
+}    
+
+/* BOTON MENU RESPONSIVE */
+.boton-menu-responsive{
+    width: 50px;
+    display: none;
+    cursor: pointer;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+/* BOTONES FILTRO PERSONAJES */
+nav{
+    grid-area: b;
+    place-self: center;
+    display: block;
+}
+
+
+.contenedor-menu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 48px;
+}
+
+li{
+   list-style-type: none;
+   font-size: 15px;
+}
+
+
+#todos-boton, #mujeres-boton, #hombres-boton{
+    background-color: transparent;
+    color: #fff;
+    border: transparent;
+    font-size: 20px;
+    font-family: monospace;
+    
+}
+
+#todos-boton:hover, #mujeres-boton:hover, #hombres-boton:hover{
+    cursor: pointer;
+    color: #0d94a5;
+    transform: scale(1.3, 1.3);
+    font-family: Get Schwifty;
+    text-shadow: 1px 1px 0px #fff200, 1px 1px 0px #000;
+}
+
+
+
+
+/* PLANTILLA */
+
+#contenedor-padre-plantillas{
+    margin: 25px 0px 30px 0px;
+    display: grid;
+    place-items: center;
+    gap: 10px;  
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+#contenedor-plantilla{
+    border: 1px solid #d8ff009e;
+    width: 90%;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #1f201fcf;
+    border-radius: 5px;
+    display: grid;
+    align-content: space-between;
+    
+}
+
+img{
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+#contenedor-plantilla:hover{
+    box-shadow: 0px 0px 20px 1px rgb(164, 245, 42);
+    border: transparent;
+}
+
+.contenedor-imagen{
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#contenedor-plantilla-datospersonajes{
+    color: #fff;
+    box-sizing:border-box;
+    font-size: 13px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.imagen-personajes{
+    width: 100%;
+    transition: all 2s;
+}
+
+.imagen-personajes:hover{
+    transform: scale(1.2, 1.2);
+    filter: grayscale(1);
+}
+
+.datos-personajes{
+    padding-left: 10px;
+}
+
+#contenedor-plantilla-vermas{
+    color: #fff;
+    border-top: 1px solid #00ff7130;
+    box-sizing: border-box;
+    text-align: center;
+    height: max-content;
+    padding: 5px 0px 5px 0px;
+}
+
+
+/* NRO DE PAGINA */
+#nro-pagina{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-family: Consolas, Courier New, monospace;
+    margin: 14px;
+}
+
+#nro-pagina>p{
+    text-shadow: 3px 0px 20px #e5ff01;
+    
+    
+}
+
+
+/* BOTON ANTERIOR-SIGUIENTE */
+
+
+
+#contenedor-botones-anterior-siguiente{
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px 16px 0px;
+    letter-spacing: 10px;
+}
+
+#primer-pagina-boton, #anterior-pagina-boton, #siguiente-pagina-boton, #ultima-pagina-boton{
+    height: 40px;
+    margin: 5px;
+    width: 95px;
+    background: #333;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: Consolas, Courier New, monospace;
+    border: solid #354523 1px;
+    font-size: 13px;
+    color: rgb(161, 161, 161);
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #2e2d2d, #212121);
+    -webkit-box-shadow: -1px -5px 15px #41465B, 
+                 5px  5px 15px #41465B, 
+      inset      5px  5px 10px #212121, 
+      inset     -5px -5px 10px #212121;
+    box-shadow: -1px -5px 15px #41465B, 
+                 5px  5px 15px #41465B, 
+      inset      5px  5px 10px #212121, 
+      inset     -5px -5px 10px #212121;
+}
+
+#primer-pagina-boton:hover, #anterior-pagina-boton:hover, #siguiente-pagina-boton:hover, #ultima-pagina-boton:hover{
+  -webkit-box-shadow: 1px 1px 13px #026e23c0,
+                    -1px -1px 13px #545b78;
+  box-shadow: 1px 1px 13px #026e23c0,
+             -1px -1px 13px #545b78;
+  color: #d6d6d6;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+#primer-pagina-boton:active, #anterior-pagina-boton:active, #siguiente-pagina-boton:active, #ultima-pagina-boton:active{
+    -webkit-box-shadow: 1px 1px 13px #20232e,
+                       -1px -1px 33px #545b78;
+    box-shadow: 1px 1px 13px #20232e,
+               -1px -1px 33px #545b78;
+    color: #d6d6d6;
+    -webkit-transition: 100ms;
+    transition: 100ms;
+  }
+
+
+
+/* FOOTER */
+
+.footer{
+    width: 100%;
+    height: 150px;
+    background-color: #1f201fcf;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.footer-primerseccion-redessociales{
+    width: 300px;
+    height: 71px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-primerseccion-redessociales-facebook{
+    background-image: url(./iconos-redessociales/facebook-hover.ico);
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    background-color: transparent;
+}
+
+.footer-primerseccion-redessociales-facebook:hover, .footer-primerseccion-redessociales-instagram:hover, .footer-primerseccion-redessociales-twitter:hover, .footer-primerseccion-redessociales-youtube:hover{
+    transform: scale(1.1, 1.1);
+}
+
+
+.footer-primerseccion-redessociales-instagram{
+    background-image: url(./iconos-redessociales/ig.ico);
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    background-size: 42px;
+    background-position: center;
+    background-color: transparent;
+}
+
+.footer-primerseccion-redessociales-twitter{
+    background-image: url(./iconos-redessociales/twitter.ico);
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    background-size: 41px;
+    background-position: center;
+    background-color: transparent;
+}
+
+.footer-primerseccion-redessociales-youtube{
+    background-image: url(./iconos-redessociales/youtube_icon-icons.com_72036.ico);
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    background-size: 41px;
+    background-position: center;
+    background-color: transparent;
+}
+
+
+.footer-segundaseccion{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    font-size: 14px;
+    gap: 25px;
+}
+
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover{
+    border-bottom: 1px solid rgb(2, 121, 2);
+    color: rgb(2, 121, 2);
+}
+
+.footer-tercerseccion-copyright > p{
+    font-size: 12px;
+}
+
+
+
+/*----- --------------RESPONSIVE----------------------- */
+@media(max-width: 300px){
+    body{
+        width: min-content;
+    }
+}
+
+@media(min-width: 0px) and (max-width: 600px){
+    .titulo-principal{
+        background-size: 191px;
+    }    
+
+    .nav{
+        grid-area: c;
+        display: none;
+        
+    }
+
+    .boton-menu-responsive{
+        display: block;
+    }
+
+    header .nav ul{
+        grid-template-columns: 1fr;
+        place-items: center;
+        height: 148px;
+        width: 70%;
+    }
+
+    .contenedor-menu{
+        gap: 0px;
+    }
+
+    header:hover{
+        .nav{
+            display: block;
+        }
+    }
+
+    #todos-boton, #mujeres-boton, #hombres-boton{
+        font-size: 18px;
+    }
+
+    #contenedor-plantilla{
+        border: 1px solid #d8ff009e;
+        
+        height: 100%;
+        background-color: #1f201fcf;
+        border-radius: 5px;
+        display: grid;
+        align-content: space-between;
+    }
+
+    .footer-segundaseccion{
+        gap: 0;
+    }
+
+    .footer-segundaseccion > span > a{
+        text-decoration: none;
+        color: #fff;
+        padding-right: 33px;
+        font-size: 12px;
+    }
+
+    .footer-segundaseccion > span > a:hover{
+        color: green;
+        border-bottom: 1px solid green;
+    }
+
+
+    
+    .footer-tercerseccion-copyright > p{
+        font-size: 10px;
+    }
+
+}
+
+
+@media(min-width: 601px) and (max-width: 900px){
+    .contenedor-menu{
+        gap: 25px;
+    }
+
+    #todos-boton, #mujeres-boton, #hombres-boton{
+        font-size: 18px;
+    }
+}
