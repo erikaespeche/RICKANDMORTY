@@ -17,6 +17,11 @@ body{
     background-size: cover;
     background-position: center;
 }
+
+
+
+
+
 /* BARRA DE MENU */
 header{
     width: 100%;
@@ -338,7 +343,7 @@ a:hover{
 
 
 
-/*----- --------------RESPONSIVE----------------------- */
+/*---------------------RESPONSIVE----------------------- */
 @media(max-width: 300px){
     body{
         width: min-content;
@@ -392,23 +397,14 @@ a:hover{
     }
 
     .footer-segundaseccion{
-        gap: 0;
+        gap: 1;
     }
 
     .footer-segundaseccion > span > a{
-        text-decoration: none;
-        color: #fff;
-        padding-right: 33px;
         font-size: 12px;
     }
 
-    .footer-segundaseccion > span > a:hover{
-        color: green;
-        border-bottom: 1px solid green;
-    }
 
-
-    
     .footer-tercerseccion-copyright > p{
         font-size: 10px;
     }
