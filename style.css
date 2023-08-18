@@ -41,14 +41,12 @@ header{
 
 
 /* TITULO PRINCIPAL */
-.titulo-principal{
-    background-image: url(./iconos-redessociales/Rick-And-Morty-Logo-Transparent-File.png);
-    width: 210px;
-    height: 65px;
-    background-size: 208px;
-    background-repeat: no-repeat;
-    background-position: center;
-}    
+
+
+.titulo-gif{
+    width: 305px;
+    height: 100p
+}
 
 /* BOTON MENU RESPONSIVE */
 .boton-menu-responsive{
